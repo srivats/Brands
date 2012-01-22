@@ -1,0 +1,48 @@
+<?php
+    $items=Mage::getModel('checkout/cart')->getQuote()->getItemsCount();
+    $total=Mage::getModel('checkout/cart')->getQuote()->getGrandTotal();
+    $collection=Mage::helper('checkout/cart')->getCart()->getQuote();
+    //var_dump($collection->getData());
+?>
+<div class="header-cart">
+    <div id="header-cart-title">My Cart</div>
+    <div id="header-cart-content">
+        <div>
+            <?php if($items==0): ?>
+            <p class="empty"><?php echo $this->__('Your cart is empty') ?></p>
+            <?php
+            $categories = Mage::getModel('catalog/category')->getCollection()
+
+                ->addAttributeToSelect('is_active')
+                ->addAttributeToSelect('name')
+                ->addAttributeToSelect('url');
+            ?>
+            <?php elseif($items>0):?>
+                <?php foreach($collection->getItemsCollection() as $item): ?>
+                    <div class="f-right item">
+                        <p class="product-name"> <?php echo $item->getName(); ?></p>
+                        <p class="product-price"><?php echo Mage::helper('core')->currency($item->getPrice(),true,false);?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+.header-cart{
+    background-color: #333333;
+}
+.item {background-color: #373737;}
+#header-cart-content {
+    background-color: #333333;
+    color: #ffffff;
+    font-size:1.2em;
+}
+</style>
+<script type="text/javascript">
+    /*$('header-cart-title').observe('mouseover',function(){
+        Effect.SlideDown('header-cart-content');return false;
+    });
+    */
+</script>
