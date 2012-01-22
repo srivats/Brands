@@ -18,7 +18,7 @@
             </srivats>
         </routers>
     </frontend>
-
+<!--
     <admin>
         <routers>
             <adminhtml>
@@ -30,18 +30,18 @@
             </adminhtml>
         </routers>
     </admin>
+-->
 
-    <!--
     <admin>
         <routers>
             <srivats>
                 <use>admin</use>
                 <args>
                     <module>Srivats_Brands</module>
-                    <frontName><![CDATA[adminbrands]]</frontName>
+                    <frontName>adminbrands</frontName>
                 </args>
             </srivats>
         </routers>
     </admin>
-    -->
+
 </config>
