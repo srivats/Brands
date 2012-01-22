@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Srivats_Brands>
+            <codePool>local</codePool>
+            <active>true</active>
+        </Srivats_Brands>
+    </modules>
+</config>

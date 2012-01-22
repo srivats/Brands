@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Srivats_Brands>
+            <version>1.0.0</version>
+        </Srivats_Brands>
+    </modules>
+
+    <frontend>
+        <routers>
+            <srivats>
+                <use>standard</use>
+                <args>
+                    <module>Srivats_Brands</module>
+                    <frontName>brands</frontName>
+                </args>
+            </srivats>
+        </routers>
+    </frontend>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <srivats before="Mage_Adminhtml">Srivats_Brands_Adminhtml</srivats>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <!--
+    <admin>
+        <routers>
+            <srivats>
+                <use>admin</use>
+                <args>
+                    <module>Srivats_Brands</module>
+                    <frontName><![CDATA[adminbrands]]</frontName>
+                </args>
+            </srivats>
+        </routers>
+    </admin>
+    -->
+</config>
