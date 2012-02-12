@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <brands translate="title"  module="brands">
+                    <title>Manage Brands</title>
+                    <sort_order>500</sort_order>
+                    <action>adminhtml/back/index</action>
+                </brands>
+            </children>
+        </catalog>
+    </menu>
+</config>

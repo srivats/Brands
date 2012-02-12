@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <Company_Modules>
+            <version>1.0.0</version>
+        </Company_Modules>
+    </modules>
+
+    <frontend>
+        <routers>
+            <brands>
+                <use>standard</use>
+                <args>
+                    <module>Company_Brands</module>
+                    <frontName>brands</frontName>
+                </args>
+            </brands>
+        </routers>
+        <layout>
+            <updates>
+                <brands>
+                    <file>brands.xml</file>
+                </brands>
+            </updates>
+        </layout>
+    </frontend>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <brands after="Mage_Adminhtml">Company_Brands_Adminhtml</brands>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <global>
+        <blocks>
+            <brands>
+                <class>Company_Brands_Block</class>
+            </brands>
+        </blocks>
+        <helpers>
+            <brands>
+                <class>Company_Brands_Helper</class>
+            </brands>
+        </helpers>
+        <models>
+            <brands>
+                <class>Company_Brands_Model</class>
+                <resourceModel>brands_mysql4</resourceModel>
+            </brands>
+                <brands_mysql4>
+                    <class>Company_Brands_Model_Mysql4</class>
+                    <entities>
+                        <manager>
+                            <table>brands</table>
+                        </manager>
+                    </entities>
+                </brands_mysql4>
+        </models>
+
+        <resources>
+            <brands_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </brands_read>
+            <brands_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </brands_write>
+        </resources>
+    </global>
+</config>

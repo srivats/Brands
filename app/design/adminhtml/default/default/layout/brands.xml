@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_brands_grid>
+        <reference name="content">
+            <block type="brands/adminhtml_brands" name="brandsgrid" output="toHtml"/>
+        </reference>
+    </adminhtml_brands_grid>
+</layout>
